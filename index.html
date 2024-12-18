@@ -4,29 +4,332 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Weather Alert</h1>
-    </header>
-    <main>
-        <section id="weather-display">
-            <h2>Current Weather</h2>
-            <p id="current-temp">Temperature: 25°C</p>
-            <p id="weather-condition">Condition: Sunny</p>
-        </section>
-        <section id="alerts">
-            <h2>Alerts</h2>
-            <ul id="alert-list">
-                <li>No active alerts</li>
-            </ul>
-        </section>
-        <section id="settings">
-            <h2>Settings</h2>
-            <button id="set-location">Set Location</button>
-            <button id="alarm-settings">Alarm Settings</button>
-        </section>
-    </main>
+    <div class="container">
+        <div class="header">
+            <h1>Weather</h1>
+            <div class="weather-input">
+                <input type="text" name="City" id="city_input" placeholder="Enter City name">
+                <button type="button" id="searchBtn">
+                    <i class="fa-regular fa-search"></i> Search
+                </button>
+                <button type="button" id="locationBtn">
+                    <i class="bx bx-target-lock"></i> Current location
+                </button>
+            </div>
+        </div>
+        <div class="weather-data">
+            <div class="weather-left">
+                <div class="card">
+                    <div class="current-weather">
+                        <div class="details">
+                            <p>Now</p>
+                            <h2>___&deg;C</h2>
+                            <p>_______</p>
+                        </div>
+                        <div class="weather icon">
+                        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt=" ">
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="card-footer">
+                        <p><i class="fa-light fa-calendar"></i>  ________</p>
+                        <p><i class="fa-light fa-location-dot"></i>  ________</p>
+                    </div>
+                </div>               
+                <div class="card">
+                    <h2>5 days Forecast</h2>
+                    <div class="day-forecast">
+                        <div class="forecast-item">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt= " ">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                    </div>
+                    <!--<div class="day-forecast">
+                        <div class="forecast-item">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt= " ">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="forecast-item">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt= " ">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="forecast-item">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt= " ">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                    </div>
+                    <div class="day-forecast">
+                        <div class="forecast-item">
+                            <div class="icon-wrapper">
+                                <img src="https://openweathermap.org/img/wn/02d.png" alt= " ">
+                                <span>____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="weather-right">
+                <h2>Today's Highlights</h2>
+                <div class="highlights">
+                    <div class="card">
+                        <div class="card-head">
+                            <p>Air Quality Index</p>
+                            <p class="air-index aqi-1">Good</p>
+                        </div>
+                        <div class="air-indices">
+                            <i class="fa-regular fa-wind fa-3x"></i>
+                            <div class="item">
+                                <p>PM2.5</p>
+                                <h2>____</h2>
+                            </div>
+                            <div class="item">
+                                <p>PM10</p>
+                                <h2>____</h2>
+                            </div>
+                            <div class="item">
+                                <p>SO2</p>
+                                <h2>____</h2>
+                            </div>
+                            <div class="item">
+                                <p>CO</p>
+                                <h2>____</h2>
+                            </div>
+                            <div class="item">
+                                <p>NO</p>
+                                <h2>____</h2>
+                            </div>
+                            <div class="item">
+                                <p>NO2</p>
+                                <h2>____</h2>
+                            </div>
+                            <div class="item">
+                                <p>NH3</p>
+                                <h2>____</h2>
+                            </div>
+                            <div class="item">
+                                <p>O3</p>
+                                <h2>____</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head">
+                            <p>Sunrise & Sunset</p>
+                        </div>  
+                     <div class="sunrise-sunset">
+                        <div class="item">
+                            <div class="icon">
+                            <i class="fa-light fa-sunrise fa-4x"></i>
+                            </div>
+                            <div>
+                                <p>Sunrise</p>
+                                <h2>______</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="icon">
+                                <i class="fa-light fa-sunset fa-4x"></i>
+                            </div>
+                            <div>
+                                <p>Sunset</p>
+                                <h2>______</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-head">
+                        <p>Humidity</p>
+                    </div>
+                    <div class="card-item">
+                        <i class="fa-light fa-droplet fa-2x"></i>
+                        <h2 id="humidityVal">_____%</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-head">
+                        <p>Wind speed</p>
+                    </div>
+                    <div class="card-item">
+                        <i class="fa-light fa-location-arrow fa-2x"></i>
+                        <h2 id="windSpeedVal">_____m/s</h2>
+                    </div>
+                </div>
+            <div class="card">
+                <div class="card-head">
+                    <h3>Alarm System</h3>
+                </div>
+                <button id="setAlarmBtn">
+                    <i class="fa-light fa-bell fa-1x"></i>
+                    Weather Alarm 
+                </button>
+                <audio id="alarmSound" src="/audio/alarm.mp3" type="audio/mp3"></audio>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <h3>Settings</h3>
+                </div>
+                <button id="settingBtn">
+                    Alarm Settings                    
+                </button>
+            </div>
+            </div>
+
+            <div class="card">
+                <h3>Fertilizer Advice</h3>
+                <div class="card-content" id="cardContent">
+                    <p class="demoTitle">&nbsp;</p>
+                    <header class="text-center mb-8">
+                    <h1 class="text-4xl font-bold text-gray-800">Weekly Fertilizer Usage Plan</h1>
+                    <p class="text-gray-600">Plan your fertilizer usage for optimal plant growth</p>
+                    </header>
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 0 (Preparation Stage)</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/B8SpmgQuxWa2ORxgsqGDtQjReqN8AEDIZ2Pau7a0dbNHdL9JA.jpg" width="150" height="100" />
+                    <p class="text-gray-700" >Objective: Prepare the soil for planting.</p>
+                    <p class="text-gray-700">Apply basal fertilizer with a focus on phosphorus (P) and potassium (K) to encourage root development.</p>
+                    <p class="text-gray-700">Example: DAP (Di-Ammonium Phosphate) or SSP (Single Super Phosphate).</p>
+                    <p class="text-gray-700">Dosage: 50&ndash;60 kg P₂O₅/ha and 40&ndash;50 kg K₂O/ha.</p>
+                    <p class="text-gray-700">Incorporate organic matter such as compost or well-decomposed manure (5&ndash;10 tons/ha).</p>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 1 (After Transplanting or Emergence)</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/Od5e8sY5y128ECf7KJ0rQ8xOumADu2bpSJpCLD4i3JfZ0t0nA.jpg" width="150" height="100" />
+                    <p class="text-gray-700">Objective: Encourage vigorous vegetative growth.</p>
+                    <p class="text-gray-700">Apply Urea (Nitrogen source) for early growth.</p>
+                    <p class="text-gray-700">Dosage: 30&ndash;40 kg N/ha.</p>
+                    <p class="text-gray-700">Method: Broadcast uniformly or use as topdressing in flooded fields.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 2</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/sBqZcJp3eMzKdyqpTFbIT4xEaViSkeLAi6sz86PliGML6W6TA.jpg" alt="Image of a garden with young plants and no fertilizer application" width="150" height="100" />
+                    <p class="text-gray-700">Check for pest or weed pressure. Use integrated pest management if needed.</p>
+                    <p class="text-gray-700">No additional fertilizer.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 3</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/yYXANRJ4QfXPUaN6snxNEhN4XNWRmSOe5PdLoVu38RLE6W6TA.jpg" alt="Image of a garden with plants and fertilizer application" width="150" height="100" />
+                    <p class="text-gray-700">Conduct the first topdressing of nitrogen.</p>
+                    <p class="text-gray-700">Use Urea: 20&ndash;30 kg N/ha.</p>
+                    <p class="text-gray-700">Apply when fields are slightly drained or just before irrigation.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 4</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/yYXANRJ4QfXPUaN6snxNEhN4XNWRmSOe5PdLoVu38RLE6W6TA.jpg" alt="Image of a garden with plants and fertilizer application" width="150" height="100" />
+                    <p class="text-gray-700">Apply a second dose of nitrogen if tillering is not sufficient.</p>
+                    <p class="text-gray-700">Urea: 20&ndash;30 kg N/ha.</p>
+                    <p class="text-gray-700">Include a micronutrient mix with zinc sulfate (5&ndash;10 kg/ha) to prevent deficiencies.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 5</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/yYXANRJ4QfXPUaN6snxNEhN4XNWRmSOe5PdLoVu38RLE6W6TA.jpg" alt="Image of a garden with plants and fertilizer application" width="150" height="100" />
+                    <p class="text-gray-700">Apply potassium sulfate (K₂SO₄) or Muriate of Potash (MOP) for panicle development.</p>
+                    <p class="text-gray-700">Dosage: 40&ndash;50 kg K₂O/ha.</p>
+                    <p class="text-gray-700">Method: Incorporate into soil before irrigation.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 6</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/yYXANRJ4QfXPUaN6snxNEhN4XNWRmSOe5PdLoVu38RLE6W6TA.jpg" alt="Image of a garden with plants and fertilizer application" width="150" height="100" />
+                    <p class="text-gray-700">Apply a small amount of nitrogen for flowering boost (optional if signs of deficiency are observed).</p>
+                    <p class="text-gray-700">Urea: 10&ndash;15 kg N/ha.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 7</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/TSYK5bv4Ns4sBZweQ3MoTOqInKwtuhAAnjy7qk2mWc6EdL9JA.jpg" alt="Image of a garden with plants and foliar fertilizer application" width="150" height="100" />
+                    <p class="text-gray-700">Spray foliar fertilizers containing boron (1&ndash;2 kg/ha) and silicon to improve grain quality and stress tolerance.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 8</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/7wr3qWDPJwayBhxNrdAxtk7D8t2Bog7WDVyWveVOCT7CdL9JA.jpg" alt="Image of a garden with plants and proper water levels" width="150" height="100" />
+                    <p class="text-gray-700">Maintain proper water levels and avoid fertilizer application to prevent overgrowth or lodging.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold mb-2">Week 9&ndash;12 (Ripening Stage)</h2>
+                    <img class="mb-4" src="https://storage.googleapis.com/a1aa/image/NLSWkDSlK164Gh6IQxsZA7fRphta4LdS569OBZpYBobEdL9JA.jpg" alt="Image of a garden with ripening plants and no fertilizer application" width="150" height="100" />
+                    <p class="text-gray-700">Objective: Complete grain filling and hardening.</p>
+                    <p class="text-gray-700">Avoid further nitrogen to prevent delays in maturity.</p>
+                    <p class="text-gray-700">Use potassium if needed to strengthen grain formation.</p>
+                    </div>
+                    </div>
+    <!--<div class="Hourly Forecast">
+        <h2>Today At</h2>
+        <div class="card">
+                <p>9 AM</p>
+                <img src="https://openweathermap.org/img/wn/04d.png">
+                <p>____&deg;C</p>
+        </div>
+        <div class="card">
+                <p>10 AM</p>
+                <img src="https://openweathermap.org/img/wn/04d.png">
+                <p>____&deg;C</p>
+        </div>
+        <div class="card">
+            <p>11 AM</p>
+            <img src="https://openweathermap.org/img/wn/04d.png">
+            <p>____&deg;C</p>
+        </div>
+        <div class="card">
+            <p>12 PM</p>
+            <img src="https://openweathermap.org/img/wn/04d.png">
+            <p>____&deg;C</p>
+        </div>
+        <div class="card">
+            <p>1 PM</p>
+            <img src="https://openweathermap.org/img/wn/04d.png">
+            <p>____&deg;C</p>
+        </div>
+        <div class="card">
+            <p>2 PM</p>
+            <img src="https://openweathermap.org/img/wn/04d.png">
+            <p>____&deg;C</p>
+        </div>
+        <div class="card">
+            <p>3 PM</p>
+            <img src="https://openweathermap.org/img/wn/04d.png">
+            <p>____&deg;C</p>
+        </div>
+        <div class="card">
+        <p>4 PM</p>
+        <img src="https://openweathermap.org/img/wn/04d.png">
+        <p>____&deg;C</p>
+        </div>
+    </div>-->
+    </div>
+        </div>
+</div>
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
